@@ -23,7 +23,11 @@ const ModelSection: React.FC<Props> = ({
     }
   }, [modelName, overlayNode, registerModel]);
 
-  return <Container {...props}>{children}</Container>;
+  return (
+    <Container ref={sectionRef} {...props}>
+      {children}
+    </Container>
+  );
 };
 
 export default ModelSection;
